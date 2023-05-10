@@ -30,3 +30,13 @@ quadraple x = double (double x)
 factorial n = product [1 .. n]
 
 average ns = sum ns `div` length ns
+
+-- useful ghci commands
+-- :load <file>
+-- :reload
+-- :set editor <name>
+-- :edit <name> => edit script name
+-- :edit => edit current script
+-- :type <expr> => show type of expression
+-- :? => show all commands
+-- :quit => quit ghci
