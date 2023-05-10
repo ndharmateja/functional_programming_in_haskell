@@ -43,9 +43,9 @@ average ns = sum ns `div` length ns
 -- :quit => quit ghci
 
 -- mimic last function
-myLast ns = head (reverse ns)
+last1 ns = head (reverse ns)
 
-myLast2 ns = ns !! (length ns - 1)
+last2 ns = ns !! (length ns - 1)
 
 -- mimic init function (which removes last element)
 init1 ns = reverse (drop 1 (reverse ns))
