@@ -11,16 +11,17 @@
 -- reverse [1, 2, 3] => [3, 2, 1]
 -- f a b => f(a, b)
 -- f a + b => (f a) + b and not f(a + b) => functions have highest priority
-
 -- Math to haskell representation
 -- f(x) => f x
 -- f(x, y) => f x y
 -- f(g(x)) => f (g x)
 -- f(x, g(y)) => f x (g y)
 -- f(x) * g(y) => f x * g y
-
 -- New functions defined with script, a text file consisting of function definitions
 -- usually have .hs but not mandatory
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+
+{-# HLINT ignore "Use last" #-}
 
 double x = x + x
 
@@ -40,3 +41,13 @@ average ns = sum ns `div` length ns
 -- :type <expr> => show type of expression
 -- :? => show all commands
 -- :quit => quit ghci
+
+-- mimic last function
+myLast ns = head (reverse ns)
+
+myLast2 ns = ns !! (length ns - 1)
+
+-- mimic init function (which removes last element)
+init1 ns = reverse (drop 1 (reverse ns))
+
+init2 ns = take (length ns - 1) ns
