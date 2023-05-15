@@ -19,10 +19,6 @@
 -- f(x) * g(y) -- => f x * g y
 -- New functions defined with script, a text file consisting of function definitions
 -- usually have .hs but not mandatory
-{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
-
-{-# HLINT ignore "Use last" #-}
-{-# HLINT ignore "Use init" #-}
 
 double x = x + x
 

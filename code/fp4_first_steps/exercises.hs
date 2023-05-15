@@ -1,3 +1,8 @@
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+
+{-# HLINT ignore "Use last" #-}
+{-# HLINT ignore "Use init" #-}
+
 -- mimic last function
 last1 ns = head (reverse ns)
 
