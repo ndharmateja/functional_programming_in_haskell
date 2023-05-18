@@ -48,3 +48,17 @@ msort xs = merge (msort left) (msort right)
   where
     left = [x | (i, x) <- zip [0 ..] xs, i < length xs `div` 2]
     right = [x | (i, x) <- zip [0 ..] xs, i >= length xs `div` 2]
+
+-- 3. insertion sort
+-- a. insert
+-- insert 3 [1, 2, 4, 5] -- => [1, 2, 3, 4, 5]
+insert :: Ord a => a -> [a] -> [a]
+insert x [] = [x]
+insert y (x : xs)
+  | x < y = x : insert y xs
+  | x >= y = y : (x : xs)
+
+-- b. insertion sort
+isort :: Ord a => [a] -> [a]
+isort [] = []
+isort (x : xs) = insert x (isort xs)
