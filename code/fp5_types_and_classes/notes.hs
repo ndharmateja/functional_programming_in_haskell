@@ -77,7 +77,7 @@ take5 = take 5
 
 -- Haskell has number of type classes: Num (numeric types), Eq (equality types), Ord (ordered types) etc
 -- (+) :: Num a => a -> a -> a
--- (--) :: Eq a => a -> a -> Bool
+-- (==) :: Eq a => a -> a -> Bool
 -- (<) :: Ord a => a -> a -> Bool
 
 -- tips:
