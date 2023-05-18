@@ -11,7 +11,7 @@ and1 (x : xs) = x && and1 xs
 -- b. concat
 concat1 :: [[a]] -> [a]
 concat1 [] = []
-concat1 (x : xs) = x ++ concat1 xs
+concat1 (xs : xss) = xs ++ concat1 xss
 
 -- c. replicate a list with n identical elements
 -- replicate 3 'c' -- => ['c', 'c', 'c']
