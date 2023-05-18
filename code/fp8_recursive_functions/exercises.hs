@@ -1,6 +1,7 @@
 {-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
 
 {-# HLINT ignore "Use foldr" #-}
+{-# HLINT ignore "Use splitAt" #-}
 
 -- 1
 -- a. and
@@ -41,13 +42,17 @@ merge (x : xs) (y : ys)
   | x > y = y : merge (x : xs) ys
 
 -- b. msort
+halve :: [a] -> ([a], [a])
+halve xs = (take n xs, drop n xs)
+  where
+    n = length xs `div` 2
+
 msort :: Ord a => [a] -> [a]
 msort [] = []
 msort [x] = [x]
 msort xs = merge (msort left) (msort right)
   where
-    left = [x | (i, x) <- zip [0 ..] xs, i < length xs `div` 2]
-    right = [x | (i, x) <- zip [0 ..] xs, i >= length xs `div` 2]
+    (left, right) = halve xs
 
 -- 3. insertion sort
 -- a. insert
