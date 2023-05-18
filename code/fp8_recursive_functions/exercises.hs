@@ -21,8 +21,10 @@ replicate1 n x = x : replicate1 (n - 1) x
 
 -- d. select nth element of the list
 (!!!) :: [a] -> Int -> a
-(!!!) (x : _) 0 = x
-(!!!) (_ : xs) n = (!!!) xs (n - 1)
+-- (!!!) (x : _) 0 = x
+-- (!!!) (_ : xs) n = (!!!) xs (n - 1)
+(x : _) !!! 0 = x
+(_ : xs) !!! n = xs !!! (n - 1)
 
 -- e. if a value is an element of a list
 elem1 :: Eq a => a -> [a] -> Bool
